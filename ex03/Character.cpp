@@ -15,8 +15,6 @@ Character &Character::operator=(const Character& copy) {
     this->name = copy.getName();
     for (int i = 0; i < 4; i++) {
         if (copy.inventory[i] == 0)
-            this->inventory[i] = copy.inventory[i];
-        else
             this->inventory[i] = copy.inventory[i]->clone();
     }
     return *this;
